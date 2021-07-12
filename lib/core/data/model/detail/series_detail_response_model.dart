@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-
 import 'created_by.dart';
 import 'genre.dart';
 import 'last_episode_to_air.dart';

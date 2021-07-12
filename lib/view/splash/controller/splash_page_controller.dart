@@ -16,7 +16,7 @@ class SplashPageController extends GetxController {
     if (LocalStorageService.instance.isUserFirstTime) {
       Get.offAllNamed(AppNavigation.ON_BOARD_PAGE);
     } else {
-      Get.offAllNamed(AppNavigation.HOME_PAGE);
+      Get.offAllNamed(AppNavigation.MAIN_HOST_PAGE);
     }
   }
 }

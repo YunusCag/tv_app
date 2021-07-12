@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:tv_app/core/constants/url/api_url.dart';
-import 'package:tv_app/core/data/model/series_model.dart';
+import 'package:tv_app/core/data/model/series/series_model.dart';
 import 'package:tv_app/view/home/views/component/shimmer/single_card_shimmer.dart';
 
 // ignore: must_be_immutable

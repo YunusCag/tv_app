@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tv_app/core/constants/url/api_url.dart';
-import 'package:tv_app/core/data/model/series_model.dart';
+import 'package:tv_app/core/data/model/series/series_model.dart';
 import 'package:tv_app/view/common/components/shimmer/shimmer_grid_card.dart';
 
 // ignore: must_be_immutable

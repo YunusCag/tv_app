@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:tv_app/core/data/model/series_model.dart';
+import 'package:tv_app/core/data/model/series/series_model.dart';
 
 part 'top_rated_series_response_model.g.dart';
 

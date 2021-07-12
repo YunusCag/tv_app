@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:shimmer/shimmer.dart';
+import 'package:tv_app/view/common/view/components/skeleton/skeleton_container.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SkeletonDetail extends StatelessWidget {
   const SkeletonDetail({Key? key}) : super(key: key);
@@ -12,41 +12,53 @@ class SkeletonDetail extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Shimmer.fromColors(
-              baseColor: Colors.grey[300]!,
-              highlightColor: Colors.grey[100]!,
-              child: Container(
-                width: double.infinity,
-                height: Get.height * 0.5,
-                color: Colors.grey[300]!,
+            SkeletonContainer(
+              width: double.infinity,
+              height: 300.h,
+              margin: EdgeInsets.zero,
+            ),
+            SizedBox(
+              height: 10.h,
+            ),
+            SkeletonContainer(
+              margin: EdgeInsets.symmetric(
+                horizontal: 8.w,
               ),
+              width: 150.w,
+              height: 15.h,
+              borderRadius: BorderRadius.circular(4.r),
             ),
-            const SizedBox(
-              height: 10,
+            SizedBox(
+              height: 10.h,
             ),
-            Shimmer.fromColors(
-              baseColor: Colors.grey[300]!,
-              highlightColor: Colors.grey[100]!,
-              child: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 8),
-                width: Get.width*0.5,
-                height: 50,
-                color: Colors.grey[300]!,
+            SkeletonContainer(
+              margin: EdgeInsets.symmetric(
+                horizontal: 8.w,
               ),
+              width: 200.w,
+              height: 10.h,
+              borderRadius: BorderRadius.circular(4.r),
             ),
-            const SizedBox(
-              height: 10,
+            SizedBox(
+              height: 10.h,
             ),
-            Shimmer.fromColors(
-              baseColor: Colors.grey[300]!,
-              highlightColor: Colors.grey[100]!,
-              child: Container(
-                width: Get.width*0.8,
-                margin: const EdgeInsets.symmetric(horizontal: 8),
-                height: Get.height*0.3,
-                color: Colors.grey[300]!,
+            SkeletonContainer(
+              margin: EdgeInsets.symmetric(
+                horizontal: 8.w,
               ),
-            )
+              width: 200.w,
+              height: 10.h,
+              borderRadius: BorderRadius.circular(4.r),
+            ),
+            SizedBox(
+              height: 10.h,
+            ),
+            SkeletonContainer(
+              width: double.infinity,
+              margin: EdgeInsets.symmetric(horizontal: 8.w),
+              height: 100.h,
+              borderRadius: BorderRadius.circular(4.r),
+            ),
           ],
         ),
       ),

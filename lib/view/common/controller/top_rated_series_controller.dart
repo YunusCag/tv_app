@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:tv_app/core/constants/enum/enum.dart';
 import 'package:tv_app/core/data/api/tv_series_client.dart';
-import 'package:tv_app/core/data/model/series_model.dart';
+import 'package:tv_app/core/data/model/series/series_model.dart';
 
 class TopRatedSeriesController extends GetxController {
   final TVSeriesClient service;

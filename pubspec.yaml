@@ -24,6 +24,7 @@ dependencies:
   hive: ^2.0.4
   hive_flutter: ^1.0.0
   liquid_swipe: ^2.1.0
+  flutter_screenutil: ^5.0.0+2
   flutter:
     sdk: flutter
 

@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:tv_app/view/common/bindings/main_host_binding.dart';
+import 'package:tv_app/view/common/view/main_host_page.dart';
 import 'package:tv_app/view/detail/bindings/detail_binding.dart';
 import 'package:tv_app/view/detail/views/detail_page.dart';
 import 'package:tv_app/view/home/bindings/home_binding.dart';
@@ -33,15 +35,16 @@ class AppPages {
       transition: Transition.rightToLeft,
     ),
     GetPage(
+      name: _Paths.MAIN,
+      page: () => MainHostPage(),
+      binding: MainHostBinding(),
+      transition: Transition.rightToLeft,
+    ),
+    /*
+    GetPage(
       name: _Paths.HOME,
       page: () => HomePage(),
       binding: HomeBinding(),
-    ),
-    GetPage(
-      name: _Paths.DETAIL,
-      page: () => DetailPage(),
-      binding: DetailBinding(),
-      transition: Transition.rightToLeft,
     ),
     GetPage(
       name: _Paths.POPULAR,
@@ -53,6 +56,13 @@ class AppPages {
       name: _Paths.TOP_RATED,
       page: () => TopRatedPage(),
       binding: TopBinding(),
+      transition: Transition.rightToLeft,
+    ),
+     */
+    GetPage(
+      name: _Paths.DETAIL,
+      page: () => DetailPage(),
+      binding: DetailBinding(),
       transition: Transition.rightToLeft,
     ),
   ];

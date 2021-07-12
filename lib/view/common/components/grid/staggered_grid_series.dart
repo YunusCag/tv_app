@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
-import 'package:tv_app/core/data/model/series_model.dart';
+import 'package:tv_app/core/data/model/series/series_model.dart';
 import 'package:tv_app/view/common/components/card/grid_series_item.dart';
 
 class StaggeredGridSeries extends StatelessWidget {

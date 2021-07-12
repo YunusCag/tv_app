@@ -9,28 +9,22 @@ import 'component/label/view_all_label.dart';
 class HomePage extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-          backwardsCompatibility: false,
-          title: Text(LocalizationKeys.HOME_APP_BAR_TITLE.tr),
-          backgroundColor: Colors.pink),
-      body: Container(
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              ViewAllLabel(
-                title: LocalizationKeys.HOME_POPULAR_TITLE.tr,
-                onTap: controller.navigatePopularPage,
-              ),
-              PopularSeriesView(),
-              ViewAllLabel(
-                title: LocalizationKeys.HOME_TOP_RATED_TITLE.tr,
-                onTap: controller.navigateTopRatedPage,
-              ),
-              TopRatedSeriesView()
-            ],
-          ),
+    return Container(
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ViewAllLabel(
+              title: LocalizationKeys.HOME_POPULAR_TITLE.tr,
+              onTap: controller.navigatePopularPage,
+            ),
+            PopularSeriesView(),
+            ViewAllLabel(
+              title: LocalizationKeys.HOME_TOP_RATED_TITLE.tr,
+              onTap: controller.navigateTopRatedPage,
+            ),
+            TopRatedSeriesView()
+          ],
         ),
       ),
     );

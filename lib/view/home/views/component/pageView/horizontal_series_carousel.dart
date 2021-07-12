@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tv_app/core/data/model/series_model.dart';
+import 'package:tv_app/core/data/model/series/series_model.dart';
 import 'package:tv_app/view/common/components/card/series_small_card.dart';
 
 class HorizontalSeriesCarousel extends StatelessWidget {

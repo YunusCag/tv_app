@@ -45,7 +45,7 @@ class _OnBoardPageState extends State<OnBoardPage> {
       isLast: true,
       onPress: () {
         LocalStorageService.instance.isUserFirstTime = false;
-        Get.offAllNamed(AppNavigation.HOME_PAGE);
+        Get.offAllNamed(AppNavigation.MAIN_HOST_PAGE);
       },
     )
   ];

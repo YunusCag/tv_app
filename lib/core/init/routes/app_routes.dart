@@ -8,10 +8,11 @@ abstract class Routes {
 }
 
 abstract class _Paths {
-  static const SPLASH="/splash";
-  static const ON_BOARD="/on-board";
+  static const SPLASH = "/splash";
+  static const ON_BOARD = "/on-board";
+  static const MAIN = "/main";
   static const HOME = '/home';
   static const DETAIL = "/detail/:id";
   static const POPULAR = "/popular";
-  static const TOP_RATED="/top-rated";
+  static const TOP_RATED = "/top-rated";
 }
