@@ -6,5 +6,5 @@ class ApiUrl {
   static const String IMAGE_URL = "https://image.tmdb.org/t/p/w500";
   static const String GET_POPULAR_SERIES = "tv/popular";
   static const String GET_TOP_RATED_SERIES = "tv/top_rated";
-  static const String GET_SERIES_DETAIL = "tv/";
+  static const String GET_SERIES_DETAIL = "tv/{id}";
 }

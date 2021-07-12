@@ -1,11 +1,12 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:tv_app/core/constants/enum/enum.dart';
-import 'package:tv_app/core/data/api/tv_series_service.dart';
+import 'package:tv_app/core/data/api/tv_series_client.dart';
 import 'package:tv_app/core/data/model/series_model.dart';
 
 class TopRatedSeriesController extends GetxController {
-  final TVSeriesService service;
+  final TVSeriesClient service;
 
   TopRatedSeriesController(this.service);
 
@@ -29,35 +30,47 @@ class TopRatedSeriesController extends GetxController {
     topRatedState = NetworkState.LOADING;
     update([topRatedID]);
 
-    final response = await service.getTopRatedSeries(
-        language: language, page: topRatedCurrentPage);
-    if (response != null) {
-      Future.delayed(Duration(seconds: 5));
-      topRatedState = NetworkState.SUCCESS;
-      this.topRatedTotalPage = response.totalPages ?? -1;
-
-      final seriesList = response.topRatedList;
-      if (seriesList != null && seriesList.isNotEmpty) {
-        this.topRatedSeries.addAll(seriesList);
+    await service
+        .getTopRatedSeries(language,topRatedCurrentPage)
+        .then((response) {
+      var topRated = response.data;
+      if (topRated != null) {
+        topRatedState = NetworkState.SUCCESS;
+        this.topRatedTotalPage = topRated.totalPages ?? -1;
+        var seriesList = topRated.topRatedList;
+        if (seriesList != null && seriesList.isNotEmpty) {
+          this.topRatedSeries.addAll(seriesList);
+        }
+      } else {
+        topRatedState = NetworkState.ERROR;
       }
-    } else {
+      update([topRatedID]);
+    }).catchError((error) {
       topRatedState = NetworkState.ERROR;
-    }
-    update([topRatedID]);
+
+      update([topRatedID]);
+    });
   }
 
   void getTopRatedPagination({String language = "en-US"}) async {
-    final response = await service.getTopRatedSeries(
-        language: language, page: topRatedCurrentPage);
-    if (response != null) {
-      this.topRatedTotalPage = response.totalPages ?? -1;
-      ++topRatedCurrentPage;
-      final seriesList = response.topRatedList;
-      if (seriesList != null && seriesList.isNotEmpty) {
-        this.topRatedSeries.addAll(seriesList);
-        update([topRatedID]);
+    await service
+        .getTopRatedSeries(language,topRatedCurrentPage)
+        .then((response) {
+      var topRated = response.data;
+      if (topRated != null) {
+        this.topRatedTotalPage = topRated.totalPages ?? -1;
+        ++this.topRatedCurrentPage;
+        final seriesList = topRated.topRatedList;
+        if (seriesList != null && seriesList.isNotEmpty) {
+          this.topRatedSeries.addAll(seriesList);
+          update([topRatedID]);
+
+        }
+      } else {
       }
-    }
+    }).catchError((error) {
+      final err=error as DioError;
+    });
   }
 
   void onSeriesClick(int? seriesId) {

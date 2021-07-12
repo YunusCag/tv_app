@@ -27,4 +27,8 @@ const Map<String, String> tr_TR = {
   LocalizationKeys.POPULAR_APP_BAR_TITLE: "Popüler Diziler",
   //top rated page
   LocalizationKeys.TOP_RATED_APP_BAR_TITLE: "En Çok Oy Alanlar Diziler",
+
+  //detail page
+  LocalizationKeys.DETAIL_PAGE_FIRST_ON_AIR: "İlk Yayın Tarihi:\t",
+  LocalizationKeys.DETAIL_PAGE_LAST_ON_AIR:"Son Yayın Tarihi:\t"
 };

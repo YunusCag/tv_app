@@ -1,10 +1,9 @@
 import 'package:get/get.dart';
 import 'package:tv_app/core/constants/navigation/app_navigation.dart';
-import 'package:tv_app/core/data/api/tv_series_service.dart';
-import 'package:tv_app/core/init/storage/local_storage_service.dart';
+import 'package:tv_app/core/data/api/tv_series_client.dart';
 
 class HomeController extends GetxController {
-  final TVSeriesService service;
+  final TVSeriesClient service;
 
   HomeController(this.service);
 
