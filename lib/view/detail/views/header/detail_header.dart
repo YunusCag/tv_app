@@ -36,7 +36,6 @@ class DetailHeader extends StatelessWidget {
             style: TextStyle(
               fontSize: 20.sp,
               fontWeight: FontWeight.bold,
-              color: Colors.black,
             ),
           ),
           const SizedBox(
@@ -52,7 +51,6 @@ class DetailHeader extends StatelessWidget {
                   LocalizationKeys.DETAIL_PAGE_FIRST_ON_AIR.tr,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
                     fontSize: 12.sp,
                   ),
                 ),
@@ -64,7 +62,6 @@ class DetailHeader extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w400,
-                    color: Colors.black,
                   ),
                 ),
               ),
@@ -83,7 +80,6 @@ class DetailHeader extends StatelessWidget {
                   LocalizationKeys.DETAIL_PAGE_LAST_ON_AIR.tr,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
                     fontSize: 12.sp,
                   ),
                 ),
@@ -95,7 +91,6 @@ class DetailHeader extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w400,
-                    color: Colors.black,
                   ),
                 ),
               ),
@@ -114,7 +109,6 @@ class DetailHeader extends StatelessWidget {
                   LocalizationKeys.DETAIL_PAGE_SEASON_COUNT_TEXT.tr,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
                     fontSize: 12.sp,
                   ),
                 ),
@@ -126,7 +120,6 @@ class DetailHeader extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w400,
-                    color: Colors.black,
                   ),
                 ),
               ),
@@ -144,7 +137,6 @@ class DetailHeader extends StatelessWidget {
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w400,
-              color: Colors.black,
             ),
           )
         ],

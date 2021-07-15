@@ -25,7 +25,6 @@ class ViewAllLabel extends StatelessWidget {
               title,
               style: TextStyle(
                 fontSize: 18,
-                color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -42,7 +41,6 @@ class ViewAllLabel extends StatelessWidget {
                       LocalizationKeys.HOME_VIEW_ALL.tr,
                       style: TextStyle(
                         fontSize: 18,
-                        color: Colors.black,
                         fontWeight: FontWeight.bold,
                       ),
                     ),

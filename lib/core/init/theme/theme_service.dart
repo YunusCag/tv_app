@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ThemeService {
   static ThemeService instance = ThemeService._();
@@ -38,10 +39,7 @@ class ThemeService {
 
   ThemeData light = ThemeData(
     brightness: Brightness.light,
-    pageTransitionsTheme: PageTransitionsTheme(builders: {
-      TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
-      TargetPlatform.android: CupertinoPageTransitionsBuilder(),
-    }),
+    textTheme: GoogleFonts.robotoTextTheme(),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: Color(0xFFFFFFFF),
       elevation: 0,
@@ -65,6 +63,7 @@ class ThemeService {
 
   ThemeData dark = ThemeData(
     brightness: Brightness.dark,
+    textTheme: GoogleFonts.robotoTextTheme(),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: Color(0xFF000000),
       elevation: 0,
