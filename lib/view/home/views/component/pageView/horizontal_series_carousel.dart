@@ -16,7 +16,7 @@ class HorizontalSeriesCarousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: Get.height * 0.5,
+      height: Get.height * 0.4,
       child: ListView.builder(
         itemCount: seriesList.length,
         scrollDirection: Axis.horizontal,

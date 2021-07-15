@@ -22,22 +22,25 @@ class SeriesSmallCard extends StatelessWidget {
       ),
       child: Column(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: Material(
+          Expanded(
+            flex: 5,
+            child: ClipRRect(
               borderRadius: BorderRadius.circular(8),
-              child: Container(
-                height: this.height ?? Get.height * 0.35,
-                child: CachedNetworkImage(
-                  imageUrl:
-                      "${ApiUrl.IMAGE_URL}${series.posterPath ?? series.backdropPath}",
-                  placeholder: (context, url) => Center(
-                    child: SingleCardShimmer(),
+              child: Material(
+                borderRadius: BorderRadius.circular(8),
+                child: Container(
+                  height: this.height ?? Get.height * 0.35,
+                  child: CachedNetworkImage(
+                    imageUrl:
+                        "${ApiUrl.IMAGE_URL}${series.posterPath ?? series.backdropPath}",
+                    placeholder: (context, url) => Center(
+                      child: SingleCardShimmer(),
+                    ),
+                    errorWidget: (context, url, error) => Center(
+                      child: Icon(Icons.error),
+                    ),
+                    fit: BoxFit.fitHeight,
                   ),
-                  errorWidget: (context, url, error) => Center(
-                    child: Icon(Icons.error),
-                  ),
-                  fit: BoxFit.fitHeight,
                 ),
               ),
             ),
@@ -45,14 +48,17 @@ class SeriesSmallCard extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          Text(
-            "${series.name}",
-            textAlign: TextAlign.center,
-            maxLines: 3,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
+          Expanded(
+            flex: 1,
+            child: Text(
+              "${series.name}",
+              textAlign: TextAlign.center,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+              ),
             ),
           )
         ],
