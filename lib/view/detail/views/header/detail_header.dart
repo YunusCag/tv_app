@@ -33,9 +33,8 @@ class DetailHeader extends StatelessWidget {
         children: [
           Text(
             name,
-            style: TextStyle(
+            style: Theme.of(context).textTheme.headline4?.copyWith(
               fontSize: 20.sp,
-              fontWeight: FontWeight.bold,
             ),
           ),
           const SizedBox(
@@ -49,8 +48,7 @@ class DetailHeader extends StatelessWidget {
                 flex: 1,
                 child: Text(
                   LocalizationKeys.DETAIL_PAGE_FIRST_ON_AIR.tr,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                  style: Theme.of(context).textTheme.bodyText1?.copyWith(
                     fontSize: 12.sp,
                   ),
                 ),
@@ -59,9 +57,8 @@ class DetailHeader extends StatelessWidget {
                 flex: 3,
                 child: Text(
                   "${firstAirDate}",
-                  style: TextStyle(
+                  style: Theme.of(context).textTheme.bodyText2?.copyWith(
                     fontSize: 12.sp,
-                    fontWeight: FontWeight.w400,
                   ),
                 ),
               ),
@@ -78,8 +75,7 @@ class DetailHeader extends StatelessWidget {
                 flex: 1,
                 child: Text(
                   LocalizationKeys.DETAIL_PAGE_LAST_ON_AIR.tr,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                  style: Theme.of(context).textTheme.bodyText1?.copyWith(
                     fontSize: 12.sp,
                   ),
                 ),
@@ -88,9 +84,8 @@ class DetailHeader extends StatelessWidget {
                 flex: 3,
                 child: Text(
                   "${lastAirDate}",
-                  style: TextStyle(
+                  style: Theme.of(context).textTheme.bodyText2?.copyWith(
                     fontSize: 12.sp,
-                    fontWeight: FontWeight.w400,
                   ),
                 ),
               ),
@@ -107,8 +102,7 @@ class DetailHeader extends StatelessWidget {
                 flex: 1,
                 child: Text(
                   LocalizationKeys.DETAIL_PAGE_SEASON_COUNT_TEXT.tr,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                  style: Theme.of(context).textTheme.bodyText1?.copyWith(
                     fontSize: 12.sp,
                   ),
                 ),
@@ -117,9 +111,8 @@ class DetailHeader extends StatelessWidget {
                 flex: 3,
                 child: Text(
                   "${seasonCount}",
-                  style: TextStyle(
+                  style: Theme.of(context).textTheme.bodyText2?.copyWith(
                     fontSize: 12.sp,
-                    fontWeight: FontWeight.w400,
                   ),
                 ),
               ),
@@ -134,9 +127,8 @@ class DetailHeader extends StatelessWidget {
           ),
           Text(
             overView,
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w400,
+            style: Theme.of(context).textTheme.headline6?.copyWith(
+              fontSize: 12.sp,
             ),
           )
         ],

@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:tv_app/core/constants/url/api_url.dart';
 import 'package:tv_app/core/data/model/series/series_model.dart';
 import 'package:tv_app/view/home/views/component/shimmer/single_card_shimmer.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SeriesSmallCard extends StatelessWidget {
   final SeriesModel series;
@@ -55,9 +56,8 @@ class SeriesSmallCard extends StatelessWidget {
               textAlign: TextAlign.center,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
+              style: Theme.of(context).textTheme.headline6?.copyWith(
+                fontSize: 16.sp,
               ),
             ),
           )

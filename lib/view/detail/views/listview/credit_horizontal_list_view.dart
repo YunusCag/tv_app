@@ -31,10 +31,8 @@ class CreditHorizontalListView extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 8.w),
                   child: Text(
                     title,
-                    style: TextStyle(
+                    style: Theme.of(context).textTheme.headline4?.copyWith(
                       fontSize: 20.sp,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
                     ),
                   ),
                 ),
@@ -89,10 +87,9 @@ class CreditHorizontalListView extends StatelessWidget {
                                   credit.name ?? "",
                                   overflow: TextOverflow.ellipsis,
                                   maxLines: 2,
-                                  style: TextStyle(
-                                      color: Colors.black,
+                                  style: Theme.of(context).textTheme.bodyText1?.copyWith(
                                       fontSize: 12,
-                                      fontWeight: FontWeight.w500),
+                                  ),
                                 ),
                               ),
                               Padding(
@@ -104,10 +101,8 @@ class CreditHorizontalListView extends StatelessWidget {
                                   isCast
                                       ? credit.character ?? ""
                                       : credit.job ?? "",
-                                  style: TextStyle(
-                                    color: Colors.black,
+                                  style: Theme.of(context).textTheme.bodyText2?.copyWith(
                                     fontSize: 12,
-                                    fontWeight: FontWeight.w400,
                                   ),
                                 ),
                               ),

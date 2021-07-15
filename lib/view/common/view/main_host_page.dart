@@ -22,6 +22,9 @@ class MainHostPage extends GetView<MainController> {
           title: Obx(
             () => Text(
               controller.pageTitle.value,
+              style: Theme.of(context).textTheme.headline1?.copyWith(
+                fontSize: 22.sp,
+              ),
             ),
           ),
         ),

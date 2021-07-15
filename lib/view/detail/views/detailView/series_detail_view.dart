@@ -34,7 +34,6 @@ class SeriesDetailView extends StatelessWidget {
           title: Text(
             "${model.name ?? ""}",
           ),
-          backgroundColor: Colors.pink,
           expandedHeight: 300.h,
           centerTitle: true,
           snap: true,

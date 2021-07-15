@@ -39,7 +39,38 @@ class ThemeService {
 
   ThemeData light = ThemeData(
     brightness: Brightness.light,
-    textTheme: GoogleFonts.robotoTextTheme(),
+    textTheme: GoogleFonts.robotoTextTheme().copyWith(
+      headline1: TextStyle(
+        color: Colors.white,
+        fontSize: 26,
+        fontWeight: FontWeight.bold,
+      ),
+      headline4: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.w600,
+        color: Colors.black,
+      ),
+      headline5: TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.w500,
+        color: Colors.black,
+      ),
+      headline6: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
+        color: Colors.black,
+      ),
+      bodyText1: TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.w600,
+        color: Colors.black
+      ),
+      bodyText2: TextStyle(
+          fontSize: 12,
+          fontWeight: FontWeight.w400,
+          color: Colors.black
+      ),
+    ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: Color(0xFFFFFFFF),
       elevation: 0,
@@ -63,7 +94,38 @@ class ThemeService {
 
   ThemeData dark = ThemeData(
     brightness: Brightness.dark,
-    textTheme: GoogleFonts.robotoTextTheme(),
+    textTheme: GoogleFonts.robotoTextTheme().copyWith(
+      headline1: TextStyle(
+        color: Colors.white,
+        fontSize: 26,
+        fontWeight: FontWeight.bold,
+      ),
+      headline4: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.w600,
+        color: Colors.white,
+      ),
+      headline5: TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.w500,
+        color: Colors.white,
+      ),
+      headline6: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
+        color: Colors.white,
+      ),
+      bodyText1: TextStyle(
+          fontSize: 12,
+          fontWeight: FontWeight.w600,
+          color: Colors.white
+      ),
+      bodyText2: TextStyle(
+          fontSize: 12,
+          fontWeight: FontWeight.w400,
+          color: Colors.white
+      ),
+    ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: Color(0xFF000000),
       elevation: 0,

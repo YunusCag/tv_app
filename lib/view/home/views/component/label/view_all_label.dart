@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tv_app/core/init/lang/lang.dart';
 import 'package:get/get.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ViewAllLabel extends StatelessWidget {
   final String title;
@@ -23,8 +24,8 @@ class ViewAllLabel extends StatelessWidget {
             margin: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
             child: Text(
               title,
-              style: TextStyle(
-                fontSize: 18,
+              style: Theme.of(context).textTheme.headline5?.copyWith(
+                fontSize: 18.sp,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -39,8 +40,8 @@ class ViewAllLabel extends StatelessWidget {
                   children: [
                     Text(
                       LocalizationKeys.HOME_VIEW_ALL.tr,
-                      style: TextStyle(
-                        fontSize: 18,
+                      style: Theme.of(context).textTheme.headline5?.copyWith(
+                        fontSize: 18.sp,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
