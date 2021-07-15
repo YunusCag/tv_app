@@ -29,6 +29,10 @@ const Map<String, String> tr_TR = {
   LocalizationKeys.TOP_RATED_APP_BAR_TITLE: "En Çok Oy Alanlar Diziler",
 
   //detail page
-  LocalizationKeys.DETAIL_PAGE_FIRST_ON_AIR: "İlk Yayın Tarihi:\t",
-  LocalizationKeys.DETAIL_PAGE_LAST_ON_AIR:"Son Yayın Tarihi:\t"
+  LocalizationKeys.DETAIL_PAGE_FIRST_ON_AIR: "İlk Yayın Tarihi:",
+  LocalizationKeys.DETAIL_PAGE_LAST_ON_AIR:"Son Yayın Tarihi:",
+  LocalizationKeys.DETAIL_PAGE_CAST_TEXT:"Oyuncular",
+  LocalizationKeys.DETAIL_PAGE_CREW_TEXT:"Yapım Ekibi",
+  LocalizationKeys.DETAIL_PAGE_SEASON_COUNT_TEXT:"Sezon Sayısı:"
+
 };

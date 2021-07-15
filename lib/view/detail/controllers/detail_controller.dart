@@ -18,29 +18,34 @@ class DetailController extends GetxController {
   final seriesDetail = SeriesDetailResponseModel().obs;
   NetworkState detailState = NetworkState.IDLE;
 
-  final casts=RxList<CreditModel?>();
-  final crews=RxList<CreditModel?>();
+  final casts = RxList<CreditModel?>();
+  final crews = RxList<CreditModel?>();
   NetworkState creditState = NetworkState.IDLE;
 
   final seriesVideo = RxList<VideoModel?>();
   NetworkState videoState = NetworkState.IDLE;
 
-
   @override
-  void onInit() {
+  void onInit() async {
     super.onInit();
-    final int? id = int.tryParse(Get.parameters["id"] ?? "-1");
-    getSeriesDetail(id: id);
-    getCredit(id: id);
-    getVideos(id: id);
+    _getDetailPage();
   }
 
-  void getSeriesDetail({
+  void _getDetailPage() async {
+    final int? id = int.tryParse(Get.parameters["id"] ?? "-1");
+
+    await getSeriesDetail(id: id);
+    await getCredit(id: id);
+    await getVideos(id: id);
+  }
+
+  Future<void> getSeriesDetail({
     String language = "en_US",
     int? id,
   }) async {
     detailState = NetworkState.LOADING;
     update([DETAIL_OBSERVE_ID]);
+
     final seriesID = id ?? -1;
 
     if (seriesID != -1) {
@@ -74,9 +79,9 @@ class DetailController extends GetxController {
           var credits = response.data;
           if (credits != null) {
             this.creditState = NetworkState.SUCCESS;
-            final castList=credits.cast;
-            final crewList=credits.crew;
-            if(castList!=null&&crewList!=null){
+            final castList = credits.cast;
+            final crewList = credits.crew;
+            if (castList != null && crewList != null) {
               casts.addAll(castList);
               crews.addAll(crewList);
             }
@@ -103,9 +108,9 @@ class DetailController extends GetxController {
         await service
             .getSeriesVideos(id: seriesID, language: language)
             .then((response) {
-          var credits = response.data;
-          var videoList = credits?.videoList;
-          if (credits != null && videoList != null) {
+          var responseModel = response.data;
+          var videoList = responseModel?.videoList;
+          if (videoList != null) {
             this.videoState = NetworkState.SUCCESS;
             this.seriesVideo.addAll(videoList);
           } else {
@@ -119,7 +124,8 @@ class DetailController extends GetxController {
           update([VIDEOS_OBSERVE_ID]);
         });
       }
-    } catch (exception) {}
+    } catch (exception) {
+    }
   }
 
   static const String DETAIL_OBSERVE_ID = "detail_observe_id";

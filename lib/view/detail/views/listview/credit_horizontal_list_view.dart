@@ -19,96 +19,109 @@ class CreditHorizontalListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(
-        vertical: 12.h,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8.w),
-            child: Text(
-              title,
-              style: TextStyle(
-                fontSize: 20.sp,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
+    return credits.length > 0
+        ? Container(
+            margin: EdgeInsets.symmetric(
+              vertical: 12.h,
             ),
-          ),
-          Container(
-            height: Get.height * 0.3,
-            padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 8.w),
-            child: ListView.builder(
-              itemCount: credits.length,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                final credit = credits[index];
-                if (credit != null) {
-                  return Container(
-                    height: Get.height * 0.3,
-                    child: Column(
-                      children: [
-                        Expanded(
-                          child: Container(
-                            margin: const EdgeInsets.symmetric(horizontal: 4.0),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: Material(
-                                borderRadius: BorderRadius.zero,
-                                elevation: 5,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.w),
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                      fontSize: 20.sp,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                Container(
+                  height: Get.height * 0.3,
+                  padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 4.w),
+                  child: ListView.builder(
+                    itemCount: credits.length,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      final credit = credits[index];
+                      if (credit != null) {
+                        return Container(
+                          height: Get.height * 0.3,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Expanded(
                                 child: Container(
-                                  width: Get.width * 0.3,
-                                  decoration: BoxDecoration(
-                                    color: Colors.black,
-                                    shape: BoxShape.rectangle,
+                                  margin: EdgeInsets.symmetric(
+                                    horizontal: 4.0.w,
                                   ),
-                                  child: credit.profilePath != null
-                                      ? AppCachedImage(
-                                          imageUrl:
-                                              "${ApiUrl.IMAGE_URL}${credit.profilePath}",
-                                          fit: BoxFit.fill,
-                                        )
-                                      : const SizedBox.shrink(),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(8.r),
+                                    child: Material(
+                                      borderRadius: BorderRadius.zero,
+                                      elevation: 5,
+                                      child: Container(
+                                        width: Get.width * 0.3,
+                                        decoration: BoxDecoration(
+                                          color: Colors.black,
+                                          shape: BoxShape.rectangle,
+                                        ),
+                                        child: credit.profilePath != null
+                                            ? AppCachedImage(
+                                                imageUrl:
+                                                    "${ApiUrl.IMAGE_URL}${credit.profilePath}",
+                                                fit: BoxFit.fill,
+                                              )
+                                            : const SizedBox.shrink(),
+                                      ),
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(
+                                  vertical: 2.h,
+                                  horizontal: 8.w,
+                                ),
+                                child: Text(
+                                  credit.name ?? "",
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 2,
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(
+                                  vertical: 2.h,
+                                  horizontal: 8.w,
+                                ),
+                                child: Text(
+                                  isCast
+                                      ? credit.character ?? ""
+                                      : credit.job ?? "",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(
-                              vertical: 2.h, horizontal: 8.w),
-                          child: Text(
-                            credit.name ?? "",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 12,
-                                fontWeight: FontWeight.w500),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(
-                              vertical: 2.h, horizontal: 8.w),
-                          child: Text(
-                            isCast ? credit.character ?? "" : credit.job ?? "",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
-                }
-                return const SizedBox.shrink();
-              },
+                        );
+                      }
+                      return const SizedBox.shrink();
+                    },
+                  ),
+                ),
+              ],
             ),
-          ),
-        ],
-      ),
-    );
+          )
+        : const SizedBox.shrink();
   }
 }

@@ -23,6 +23,7 @@ class TopRatedSeriesView extends GetView<TopRatedSeriesController> {
           return StaggeredGridSeries(
             seriesList: controller.topRatedSeries,
             controller: controller.scrollController,
+            onTap: controller.onSeriesClick,
           );
         } else if (controller.topRatedState == NetworkState.ERROR) {
           return Container(

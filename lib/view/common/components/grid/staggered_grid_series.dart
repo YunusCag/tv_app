@@ -7,11 +7,13 @@ import 'package:tv_app/view/common/components/card/grid_series_item.dart';
 class StaggeredGridSeries extends StatelessWidget {
   final List<SeriesModel?> seriesList;
   final ScrollController controller;
+  final Function(int? seriesId) onTap;
 
   const StaggeredGridSeries({
     Key? key,
     required this.seriesList,
     required this.controller,
+    required this.onTap,
   }) : super(key: key);
 
   @override
@@ -28,8 +30,13 @@ class StaggeredGridSeries extends StatelessWidget {
           final series = seriesList[index];
 
           if (series != null) {
-            return GridSeriesItem(
-              series: series,
+            return InkWell(
+              onTap: (){
+                this.onTap(series.id);
+              },
+              child: GridSeriesItem(
+                series: series,
+              ),
             );
           }
           return SizedBox.shrink();

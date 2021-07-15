@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:tv_app/core/init/lang/lang.dart';
 import 'package:tv_app/core/init/storage/local_storage_service.dart';
 import 'package:tv_app/core/init/theme/theme_service.dart';
@@ -13,6 +13,11 @@ import 'core/init/routes/app_pages.dart';
 void main() async {
   await LocalStorageService.instance.initializeHive();
 
+  //landscape orientation
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
   runApp(TVApp());
 }
 
@@ -24,8 +29,8 @@ class TVApp extends StatelessWidget {
     initializeDateFormatting();
 
     return ScreenUtilInit(
-      designSize: Size(393,808),
-      builder: ()=>GetMaterialApp(
+      designSize: Size(393, 808),
+      builder: () => GetMaterialApp(
         title: "TV App",
         enableLog: true,
         translations: LocalizationService.instance,
@@ -36,7 +41,6 @@ class TVApp extends StatelessWidget {
         fallbackLocale: LocalizationService.fallbackLocale,
         getPages: AppPages.routes,
         theme: ThemeService.instance.light,
-
       ),
     );
   }

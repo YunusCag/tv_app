@@ -16,7 +16,9 @@ class DetailPage extends GetView<DetailController> {
           status: controller.detailState,
           onLoading: SkeletonDetail(),
           onError: SizedBox.shrink(),
-          onSuccess: SeriesDetailView(model: controller.seriesDetail.value),
+          onSuccess: SeriesDetailView(
+            model: controller.seriesDetail.value,
+          ),
         ),
       ),
     );

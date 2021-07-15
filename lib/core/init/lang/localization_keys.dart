@@ -34,4 +34,9 @@ class LocalizationKeys {
   //detail page
   static const String DETAIL_PAGE_FIRST_ON_AIR = "detail_page_first_on_air";
   static const String DETAIL_PAGE_LAST_ON_AIR = "detail_page_last_on_air";
+  static const String DETAIL_PAGE_CAST_TEXT="detail_page_cast_text";
+  static const String DETAIL_PAGE_CREW_TEXT="detail_page_crew_text";
+  static const String DETAIL_PAGE_SEASON_COUNT_TEXT="detail_page_season_count_text";
+
+
 }

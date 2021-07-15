@@ -7,4 +7,6 @@ class ApiUrl {
   static const String GET_POPULAR_SERIES = "tv/popular";
   static const String GET_TOP_RATED_SERIES = "tv/top_rated";
   static const String GET_SERIES_DETAIL = "tv/{id}";
+  static const String GET_SERIES_CREDITS = "tv/{id}/credits";
+  static const String GET_SERIES_VIDEOS ="tv/{id}/videos";
 }

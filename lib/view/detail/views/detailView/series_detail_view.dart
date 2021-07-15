@@ -4,12 +4,16 @@ import 'package:get/get.dart';
 import 'package:tv_app/core/base/view/base_network_view.dart';
 import 'package:tv_app/core/constants/url/api_url.dart';
 import 'package:tv_app/core/data/model/detail/series_detail_response_model.dart';
+import 'package:tv_app/core/init/lang/lang.dart';
 import 'package:tv_app/view/detail/controllers/detail_controller.dart';
 import 'package:tv_app/view/detail/views/header/detail_header.dart';
 import 'package:tv_app/view/detail/views/listview/credit_horizontal_list_view.dart';
+import 'package:tv_app/view/detail/views/listview/video_horizontal_list_view.dart';
+import 'package:tv_app/view/detail/views/shimmer/credit_skeleton.dart';
 import 'package:tv_app/view/home/views/component/shimmer/single_card_shimmer.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tv_app/core/extension/string_extension.dart';
+import 'package:get/get.dart';
 
 // ignore: must_be_immutable
 class SeriesDetailView extends StatelessWidget {
@@ -64,6 +68,8 @@ class SeriesDetailView extends StatelessWidget {
               lastAirDate:
                   model.lastAirDate?.formatDate(outputFormat: "dd MMMM yyyy") ??
                       "",
+              seasonCount: "${model.numberOfSeasons ?? 0}",
+              genreList: model.genres ?? List.empty(),
             ),
           ),
         ),
@@ -75,27 +81,44 @@ class SeriesDetailView extends StatelessWidget {
             child: Container(
               child: GetBuilder<DetailController>(
                 id: DetailController.CREDIT_OBSERVE_ID,
-                builder:(_)=> BaseNetworkView(
+                builder: (_) => BaseNetworkView(
                   status: controller.creditState,
                   onError: const SizedBox.shrink(),
-                  onLoading: Container(
-                    child: Center(
-                      child: CircularProgressIndicator(),
-                    ),
-                  ),
+                  onLoading: CreditSkeleton(),
                   onSuccess: Column(
                     children: [
                       CreditHorizontalListView(
                         credits: controller.casts,
-                        title: "Casts",
+                        title: LocalizationKeys.DETAIL_PAGE_CAST_TEXT.tr,
                         isCast: true,
                       ),
                       CreditHorizontalListView(
                         credits: controller.crews,
-                        title: "Crew",
+                        title: LocalizationKeys.DETAIL_PAGE_CREW_TEXT.tr,
                         isCast: false,
                       ),
                     ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+        SliverPadding(
+          padding: const EdgeInsets.only(
+            top: 8,
+          ),
+          sliver: SliverToBoxAdapter(
+            child: Container(
+              child: GetBuilder<DetailController>(
+                id: DetailController.CREDIT_OBSERVE_ID,
+                builder: (_) => BaseNetworkView(
+                  status: controller.videoState,
+                  onError: const SizedBox.shrink(),
+                  onLoading: const SizedBox.shrink(),
+                  onSuccess: VideoHorizontalListView(
+                    videoList: controller.seriesVideo,
+                    backgroundPath: controller.seriesDetail.value.backdropPath,
                   ),
                 ),
               ),

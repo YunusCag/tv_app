@@ -29,6 +29,10 @@ const Map<String, String> en_US = {
   LocalizationKeys.TOP_RATED_APP_BAR_TITLE: "Top Rated Series",
 
   //detail page
-  LocalizationKeys.DETAIL_PAGE_FIRST_ON_AIR: "First Air Date:\t",
-  LocalizationKeys.DETAIL_PAGE_LAST_ON_AIR:"Last Air Date:\t"
+  LocalizationKeys.DETAIL_PAGE_FIRST_ON_AIR: "First Air Date:",
+  LocalizationKeys.DETAIL_PAGE_LAST_ON_AIR:"Last Air Date:",
+  LocalizationKeys.DETAIL_PAGE_CAST_TEXT:"Cast",
+  LocalizationKeys.DETAIL_PAGE_CREW_TEXT:"Crew",
+  LocalizationKeys.DETAIL_PAGE_SEASON_COUNT_TEXT:"Season Count:"
+
 };

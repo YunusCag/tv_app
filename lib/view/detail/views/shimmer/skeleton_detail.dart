@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tv_app/view/common/view/components/skeleton/skeleton_container.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'horizontal_skeleton_list.dart';
 
 class SkeletonDetail extends StatelessWidget {
   const SkeletonDetail({Key? key}) : super(key: key);
@@ -59,9 +62,37 @@ class SkeletonDetail extends StatelessWidget {
               height: 100.h,
               borderRadius: BorderRadius.circular(4.r),
             ),
+            SizedBox(
+              height: 10.h,
+            ),
+            SkeletonContainer(
+              width: 100.w,
+              height: 20.h,
+              margin: EdgeInsets.symmetric(horizontal: 8.w),
+              borderRadius: BorderRadius.circular(8.r),
+            ),
+            SizedBox(
+              height: 10.h,
+            ),
+            HorizontalSkeletonList(),
+            SizedBox(
+              height: 10.h,
+            ),
+            SkeletonContainer(
+              width: 100.w,
+              height: 20.h,
+              margin: EdgeInsets.symmetric(horizontal: 8.w),
+              borderRadius: BorderRadius.circular(8.r),
+            ),
+            SizedBox(
+              height: 10.h,
+            ),
+            HorizontalSkeletonList(),
+
           ],
         ),
       ),
     );
   }
 }
+

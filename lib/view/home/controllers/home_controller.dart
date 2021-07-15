@@ -1,30 +1,19 @@
 import 'package:get/get.dart';
-import 'package:tv_app/core/constants/navigation/app_navigation.dart';
 import 'package:tv_app/core/data/api/tv_series_client.dart';
+import 'package:tv_app/view/common/controller/main_controller.dart';
 
 class HomeController extends GetxController {
   final TVSeriesClient service;
 
+  final MainController mainController = Get.find();
+
   HomeController(this.service);
 
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {}
-
   void navigatePopularPage() {
-    Get.toNamed(AppNavigation.POPULAR_PAGE);
+    mainController.onBottomNavBarTap(MainNavigationState.POPULAR.index);
   }
 
   void navigateTopRatedPage() {
-    Get.toNamed(AppNavigation.TOP_RATED_PAGE);
+    mainController.onBottomNavBarTap(MainNavigationState.TOP_RATED.index);
   }
 }

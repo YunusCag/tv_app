@@ -23,6 +23,7 @@ class PopularSeriesView extends GetView<PopularSeriesController> {
           return StaggeredGridSeries(
             seriesList: controller.popularSeries,
             controller: controller.scrollController,
+            onTap: controller.onSeriesClick,
           );
         } else if (controller.popularState == NetworkState.ERROR) {
           return Container(
