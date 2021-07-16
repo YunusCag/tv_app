@@ -33,6 +33,9 @@ const Map<String, String> en_US = {
   LocalizationKeys.DETAIL_PAGE_LAST_ON_AIR:"Last Air Date:",
   LocalizationKeys.DETAIL_PAGE_CAST_TEXT:"Cast",
   LocalizationKeys.DETAIL_PAGE_CREW_TEXT:"Crew",
-  LocalizationKeys.DETAIL_PAGE_SEASON_COUNT_TEXT:"Season Count:"
+  LocalizationKeys.DETAIL_PAGE_SEASON_COUNT_TEXT:"Season Count:",
+
+  //settings page
+  LocalizationKeys.SETTINGS_PAGE_APP_BAR_TITLE:"Settings Page",
 
 };

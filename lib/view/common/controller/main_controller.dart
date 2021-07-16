@@ -20,7 +20,10 @@ class MainController extends GetxController {
       mainNavigation.currentState?.pop();
     }
     return !check;
+  }
 
+  void navigateSettings() {
+    mainNavigation.currentState?.pushNamed(AppNavigation.SETTINGS_PAGE);
   }
 
   void onBottomNavBarTap(int index) {
@@ -41,17 +44,17 @@ class MainController extends GetxController {
 
   void checkCurrentRoute(String? route) {
     print(route);
-    switch(route){
+    switch (route) {
       case AppNavigation.HOME_PAGE:
-        currentIndex.value=MainNavigationState.HOME.index;
+        currentIndex.value = MainNavigationState.HOME.index;
         changePageTitle(LocalizationKeys.HOME_APP_BAR_TITLE.tr);
         break;
       case AppNavigation.POPULAR_PAGE:
-        currentIndex.value=MainNavigationState.POPULAR.index;
+        currentIndex.value = MainNavigationState.POPULAR.index;
         changePageTitle(LocalizationKeys.POPULAR_APP_BAR_TITLE.tr);
         break;
       case AppNavigation.TOP_RATED_PAGE:
-        currentIndex.value=MainNavigationState.TOP_RATED.index;
+        currentIndex.value = MainNavigationState.TOP_RATED.index;
         changePageTitle(LocalizationKeys.TOP_RATED_APP_BAR_TITLE.tr);
         break;
     }

@@ -33,6 +33,9 @@ const Map<String, String> tr_TR = {
   LocalizationKeys.DETAIL_PAGE_LAST_ON_AIR:"Son Yayın Tarihi:",
   LocalizationKeys.DETAIL_PAGE_CAST_TEXT:"Oyuncular",
   LocalizationKeys.DETAIL_PAGE_CREW_TEXT:"Yapım Ekibi",
-  LocalizationKeys.DETAIL_PAGE_SEASON_COUNT_TEXT:"Sezon Sayısı:"
+  LocalizationKeys.DETAIL_PAGE_SEASON_COUNT_TEXT:"Sezon Sayısı:",
+
+  //settings page
+  LocalizationKeys.SETTINGS_PAGE_APP_BAR_TITLE:"Ayarlar Sayfası",
 
 };

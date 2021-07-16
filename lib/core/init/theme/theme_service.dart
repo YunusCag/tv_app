@@ -39,6 +39,7 @@ class ThemeService {
 
   ThemeData light = ThemeData(
     brightness: Brightness.light,
+    cardColor: Colors.white,
     textTheme: GoogleFonts.robotoTextTheme().copyWith(
       headline1: TextStyle(
         color: Colors.white,
@@ -93,7 +94,14 @@ class ThemeService {
   );
 
   ThemeData dark = ThemeData(
+    cardColor: Color(0xFF242526),
     brightness: Brightness.dark,
+    appBarTheme: AppBarTheme(
+      shadowColor: Colors.transparent,
+    ),
+    scaffoldBackgroundColor: Color(0xFF191919),
+    shadowColor: Colors.transparent,
+    accentColor: Colors.blue,
     textTheme: GoogleFonts.robotoTextTheme().copyWith(
       headline1: TextStyle(
         color: Colors.white,
@@ -127,7 +135,7 @@ class ThemeService {
       ),
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      backgroundColor: Color(0xFF000000),
+      backgroundColor: Color(0xFF242526),
       elevation: 0,
       type: BottomNavigationBarType.fixed,
       showSelectedLabels: true,

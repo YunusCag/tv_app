@@ -38,5 +38,8 @@ class LocalizationKeys {
   static const String DETAIL_PAGE_CREW_TEXT="detail_page_crew_text";
   static const String DETAIL_PAGE_SEASON_COUNT_TEXT="detail_page_season_count_text";
 
+  //settings page
+  static const String SETTINGS_PAGE_APP_BAR_TITLE="settings_page_app_bar_title";
+
 
 }

@@ -40,7 +40,8 @@ class TVApp extends StatelessWidget {
         locale: LocalizationService.locale,
         fallbackLocale: LocalizationService.fallbackLocale,
         getPages: AppPages.routes,
-        theme: ThemeService.instance.light,
+        //themeMode: LocalStorageService.instance.isDarkMode?ThemeMode.dark:ThemeMode.light,
+        theme: LocalStorageService.instance.isDarkMode?ThemeService.instance.dark:ThemeService.instance.light,
       ),
     );
   }

@@ -5,6 +5,7 @@ import 'package:tv_app/core/init/lang/lang.dart';
 import 'package:tv_app/view/common/controller/main_controller.dart';
 import 'package:tv_app/view/home/views/home_page.dart';
 import 'package:tv_app/view/popular/view/popular_series_page.dart';
+import 'package:tv_app/view/setting/view/settings_page.dart';
 import 'package:tv_app/view/topRated/view/top_rated_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -23,10 +24,20 @@ class MainHostPage extends GetView<MainController> {
             () => Text(
               controller.pageTitle.value,
               style: Theme.of(context).textTheme.headline1?.copyWith(
-                fontSize: 22.sp,
-              ),
+                    fontSize: 22.sp,
+                  ),
             ),
           ),
+          actions: [
+            IconButton(
+              onPressed: controller.navigateSettings,
+              icon: Icon(
+                Icons.settings,
+                color: Colors.white,
+                size: 24.sp,
+              ),
+            ),
+          ],
         ),
         body: Navigator(
           key: controller.mainNavigation,
@@ -49,6 +60,12 @@ class MainHostPage extends GetView<MainController> {
                 controller.changePageTitle(
                     LocalizationKeys.TOP_RATED_APP_BAR_TITLE.tr);
                 break;
+              case AppNavigation.SETTINGS_PAGE:
+                page = SettingsPage();
+                controller.changePageTitle(
+                  LocalizationKeys.SETTINGS_PAGE_APP_BAR_TITLE.tr,
+                );
+                break;
               default:
                 page = HomePage();
                 controller
@@ -56,8 +73,9 @@ class MainHostPage extends GetView<MainController> {
                 break;
             }
             return PageRouteBuilder(
-              pageBuilder: (context, anim1,anim2) => page,
-              transitionsBuilder: (context, animation, secondaryAnimation, child) {
+              pageBuilder: (context, anim1, anim2) => page,
+              transitionsBuilder:
+                  (context, animation, secondaryAnimation, child) {
                 var begin = Offset(0.0, 1.0);
                 var end = Offset.zero;
                 var tween = Tween(begin: begin, end: end);
@@ -68,7 +86,6 @@ class MainHostPage extends GetView<MainController> {
                   child: child,
                 );
               },
-
               transitionDuration: const Duration(milliseconds: 500),
             );
           },
