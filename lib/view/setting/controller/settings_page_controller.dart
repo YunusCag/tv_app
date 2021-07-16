@@ -1,9 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tv_app/core/init/lang/lang.dart';
 import 'package:tv_app/core/init/storage/local_storage_service.dart';
 import 'package:tv_app/core/init/theme/theme_service.dart';
-import 'package:tv_app/view/common/controller/main_controller.dart';
 
 class SettingsPageController extends GetxController {
   var themeSelection = RxInt(LocalStorageService.instance.isDarkMode ? 1 : 0);
@@ -73,7 +71,7 @@ class SettingsPageController extends GetxController {
         languageSelection.value = 0;
         break;
     }
-    Get.updateLocale(Locale(lang,country));
+    LocalizationService.instance.changeLanguage(lang, country);
     update([SETTINGS_PAGE_OBSERVE_ID]);
   }
 

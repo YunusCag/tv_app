@@ -3,7 +3,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:tv_app/core/constants/app/app_constant.dart';
 import 'package:tv_app/core/init/lang/lang.dart';
-import 'package:tv_app/core/init/theme/theme_service.dart';
 import 'package:tv_app/view/common/components/animation/slide_transition_container.dart';
 import 'package:tv_app/view/setting/controller/settings_page_controller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
