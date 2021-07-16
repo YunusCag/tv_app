@@ -22,7 +22,7 @@ class MainHostPage extends GetView<MainController> {
         appBar: AppBar(
           title: Obx(
             () => Text(
-              controller.pageTitle.value,
+              controller.pageTitle.value.tr,
               style: Theme.of(context).textTheme.headline1?.copyWith(
                     fontSize: 22.sp,
                   ),
@@ -48,35 +48,35 @@ class MainHostPage extends GetView<MainController> {
               case AppNavigation.HOME_PAGE:
                 page = HomePage();
                 controller
-                    .changePageTitle(LocalizationKeys.HOME_APP_BAR_TITLE.tr);
+                    .changePageTitle(LocalizationKeys.HOME_APP_BAR_TITLE);
                 break;
               case AppNavigation.POPULAR_PAGE:
                 page = PopularSeriesPage();
                 controller
-                    .changePageTitle(LocalizationKeys.POPULAR_APP_BAR_TITLE.tr);
+                    .changePageTitle(LocalizationKeys.POPULAR_APP_BAR_TITLE);
                 break;
               case AppNavigation.TOP_RATED_PAGE:
                 page = TopRatedPage();
                 controller.changePageTitle(
-                    LocalizationKeys.TOP_RATED_APP_BAR_TITLE.tr);
+                    LocalizationKeys.TOP_RATED_APP_BAR_TITLE);
                 break;
               case AppNavigation.SETTINGS_PAGE:
                 page = SettingsPage();
                 controller.changePageTitle(
-                  LocalizationKeys.SETTINGS_PAGE_APP_BAR_TITLE.tr,
+                  LocalizationKeys.SETTINGS_PAGE_APP_BAR_TITLE,
                 );
                 break;
               default:
                 page = HomePage();
                 controller
-                    .changePageTitle(LocalizationKeys.HOME_APP_BAR_TITLE.tr);
+                    .changePageTitle(LocalizationKeys.HOME_APP_BAR_TITLE);
                 break;
             }
             return PageRouteBuilder(
               pageBuilder: (context, anim1, anim2) => page,
               transitionsBuilder:
                   (context, animation, secondaryAnimation, child) {
-                var begin = Offset(0.0, 1.0);
+                var begin = Offset(1, 0);
                 var end = Offset.zero;
                 var tween = Tween(begin: begin, end: end);
                 var offsetAnimation = animation.drive(tween);

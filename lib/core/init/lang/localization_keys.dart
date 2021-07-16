@@ -40,6 +40,13 @@ class LocalizationKeys {
 
   //settings page
   static const String SETTINGS_PAGE_APP_BAR_TITLE="settings_page_app_bar_title";
+  static const String SETTINGS_PAGE_THEME_SELECTION_TEXT="settings_page_theme_selection_text";
+  static const String SETTINGS_PAGE_LIGHT_THEME_TEXT="settings_page_light_theme_text";
+  static const String SETTINGS_PAGE_DARK_THEME_TEXT="settings_page_dark_theme_text";
+  static const String SETTINGS_PAGE_LANGUAGE_SELECTION_TEXT="settings_page_language_selection_text";
+  static const String SETTINGS_PAGE_LANGUAGE_TURKISH="settings_page_language_turkish";
+  static const String SETTINGS_PAGE_LANGUAGE_ENGLISH="settings_page_language_english";
+
 
 
 }

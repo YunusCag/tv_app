@@ -6,7 +6,7 @@ import 'package:tv_app/core/init/lang/lang.dart';
 class MainController extends GetxController {
   final GlobalKey<NavigatorState> mainNavigation = GlobalKey<NavigatorState>();
 
-  final pageTitle = RxString(LocalizationKeys.HOME_APP_BAR_TITLE.tr);
+  final pageTitle = RxString(LocalizationKeys.HOME_APP_BAR_TITLE);
 
   var currentIndex = RxInt(MainNavigationState.HOME.index);
 

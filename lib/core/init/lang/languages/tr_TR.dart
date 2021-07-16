@@ -30,12 +30,17 @@ const Map<String, String> tr_TR = {
 
   //detail page
   LocalizationKeys.DETAIL_PAGE_FIRST_ON_AIR: "İlk Yayın Tarihi:",
-  LocalizationKeys.DETAIL_PAGE_LAST_ON_AIR:"Son Yayın Tarihi:",
-  LocalizationKeys.DETAIL_PAGE_CAST_TEXT:"Oyuncular",
-  LocalizationKeys.DETAIL_PAGE_CREW_TEXT:"Yapım Ekibi",
-  LocalizationKeys.DETAIL_PAGE_SEASON_COUNT_TEXT:"Sezon Sayısı:",
+  LocalizationKeys.DETAIL_PAGE_LAST_ON_AIR: "Son Yayın Tarihi:",
+  LocalizationKeys.DETAIL_PAGE_CAST_TEXT: "Oyuncular",
+  LocalizationKeys.DETAIL_PAGE_CREW_TEXT: "Yapım Ekibi",
+  LocalizationKeys.DETAIL_PAGE_SEASON_COUNT_TEXT: "Sezon Sayısı:",
 
   //settings page
-  LocalizationKeys.SETTINGS_PAGE_APP_BAR_TITLE:"Ayarlar Sayfası",
-
+  LocalizationKeys.SETTINGS_PAGE_APP_BAR_TITLE: "Ayarlar Sayfası",
+  LocalizationKeys.SETTINGS_PAGE_THEME_SELECTION_TEXT: "Tema Seçimi",
+  LocalizationKeys.SETTINGS_PAGE_LIGHT_THEME_TEXT: "Aydınlık Tema",
+  LocalizationKeys.SETTINGS_PAGE_DARK_THEME_TEXT: "Karanlık Tema",
+  LocalizationKeys.SETTINGS_PAGE_LANGUAGE_SELECTION_TEXT: "Dil Seçimi",
+  LocalizationKeys.SETTINGS_PAGE_LANGUAGE_TURKISH: "Türkçe",
+  LocalizationKeys.SETTINGS_PAGE_LANGUAGE_ENGLISH: "İngilizce",
 };
