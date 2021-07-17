@@ -34,8 +34,6 @@ class _SlideTransitionContainerState extends State<SlideTransitionContainer>
       duration: widget.duration,
       vsync: this,
     );
-
-
     offsetAnimation = Tween<Offset>(
       begin: widget.begin,
       end: widget.end,

@@ -34,12 +34,14 @@ class MainController extends GetxController {
     if (check) {
       if (backStack.isNotEmpty) {
         backStack.removeLast();
-        final last = backStack.last;
-        logger.d(backStack.toString() + "\n Last:${last.toString()}");
+        if (backStack.isNotEmpty) {
+          final last = backStack.last;
+          logger.d(backStack.toString() + "\n Last:${last.toString()}");
 
-        currentNav.value = last.index;
-        _getNavRouteName(last);
-        update([NAVIGATION_OBSERVE_ID]);
+          currentNav.value = last.index;
+          _getNavRouteName(last);
+          update([NAVIGATION_OBSERVE_ID]);
+        }
       }
 
       mainNavigation.currentState?.pop();
