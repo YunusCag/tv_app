@@ -142,9 +142,9 @@ class ThemeService {
       showUnselectedLabels: true,
       selectedLabelStyle: TextStyle(
         fontWeight: FontWeight.bold,
-        color: Color(0xFF00276F),
+        color: Colors.white,
       ),
-      selectedItemColor: Color(0xFF00276F),
+      selectedItemColor: Colors.white,
       unselectedLabelStyle: TextStyle(
         color: Color(0xFF999999),
         fontWeight: FontWeight.w600,
