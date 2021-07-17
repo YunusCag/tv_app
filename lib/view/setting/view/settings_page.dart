@@ -14,22 +14,25 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: GetBuilder<SettingsPageController>(
-        id: SettingsPageController.SETTINGS_PAGE_OBSERVE_ID,
-        init: controller,
-        builder: (controller) {
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _buildChangeTheme(context),
-              SizedBox(
-                height: 10.h,
-              ),
-              _buildChangeLanguage(context)
-            ],
-          );
-        },
+    return SizedBox.expand(
+      child: Container(
+        color: Theme.of(context).scaffoldBackgroundColor,
+        child: GetBuilder<SettingsPageController>(
+          id: SettingsPageController.SETTINGS_PAGE_OBSERVE_ID,
+          init: controller,
+          builder: (controller) {
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _buildChangeTheme(context),
+                SizedBox(
+                  height: 10.h,
+                ),
+                _buildChangeLanguage(context)
+              ],
+            );
+          },
+        ),
       ),
     );
   }
@@ -38,7 +41,8 @@ class SettingsPage extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 16.w),
       child: SlideTransitionContainer(
-        begin: Offset(-1, 0),
+        begin: Offset(0, -1),
+        duration: Duration(milliseconds: 500),
         child: Material(
           color: Theme.of(context).cardColor,
           elevation: 5,
@@ -103,7 +107,8 @@ class SettingsPage extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 16.w),
       child: SlideTransitionContainer(
-        begin: Offset(-1, 0),
+        begin: Offset(0, 1),
+        duration: Duration(milliseconds: 500),
         child: Material(
           color: Theme.of(context).cardColor,
           elevation: 5,

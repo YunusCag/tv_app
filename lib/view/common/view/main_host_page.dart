@@ -42,54 +42,56 @@ class MainHostPage extends GetView<MainController> {
             ),
           ],
         ),
-        body: Navigator(
-          key: controller.mainNavigation,
-          initialRoute: '/',
-          onGenerateRoute: (settings) {
-            Widget page;
-            switch (settings.name) {
-              case AppNavigation.HOME_PAGE:
-                page = HomePage();
-                controller.changePageTitle(LocalizationKeys.HOME_APP_BAR_TITLE);
-                break;
-              case AppNavigation.POPULAR_PAGE:
-                page = PopularSeriesPage();
-                controller
-                    .changePageTitle(LocalizationKeys.POPULAR_APP_BAR_TITLE);
-                break;
-              case AppNavigation.TOP_RATED_PAGE:
-                page = TopRatedPage();
-                controller
-                    .changePageTitle(LocalizationKeys.TOP_RATED_APP_BAR_TITLE);
-                break;
-              case AppNavigation.SETTINGS_PAGE:
-                page = SettingsPage();
-                controller.changePageTitle(
-                  LocalizationKeys.SETTINGS_PAGE_APP_BAR_TITLE,
-                );
-                break;
-              default:
-                page = HomePage();
-                controller.changePageTitle(LocalizationKeys.HOME_APP_BAR_TITLE);
-                break;
-            }
-            return PageRouteBuilder(
-              pageBuilder: (context, anim1, anim2) => page,
-              transitionsBuilder:
-                  (context, animation, secondaryAnimation, child) {
-                var begin = Offset(1, 0);
-                var end = Offset.zero;
-                var tween = Tween(begin: begin, end: end);
-                var offsetAnimation = animation.drive(tween);
+        body: SizedBox.expand(
+          child: Navigator(
+            key: controller.mainNavigation,
+            initialRoute: '/',
+            onGenerateRoute: (settings) {
+              Widget page;
+              switch (settings.name) {
+                case AppNavigation.HOME_PAGE:
+                  page = HomePage();
+                  controller.changePageTitle(LocalizationKeys.HOME_APP_BAR_TITLE);
+                  break;
+                case AppNavigation.POPULAR_PAGE:
+                  page = PopularSeriesPage();
+                  controller
+                      .changePageTitle(LocalizationKeys.POPULAR_APP_BAR_TITLE);
+                  break;
+                case AppNavigation.TOP_RATED_PAGE:
+                  page = TopRatedPage();
+                  controller
+                      .changePageTitle(LocalizationKeys.TOP_RATED_APP_BAR_TITLE);
+                  break;
+                case AppNavigation.SETTINGS_PAGE:
+                  page = SettingsPage();
+                  controller.changePageTitle(
+                    LocalizationKeys.SETTINGS_PAGE_APP_BAR_TITLE,
+                  );
+                  break;
+                default:
+                  page = HomePage();
+                  controller.changePageTitle(LocalizationKeys.HOME_APP_BAR_TITLE);
+                  break;
+              }
+              return PageRouteBuilder(
+                pageBuilder: (context, anim1, anim2) => page,
+                transitionsBuilder:
+                    (context, animation, secondaryAnimation, child) {
+                  var begin = Offset(1, 0);
+                  var end = Offset.zero;
+                  var tween = Tween(begin: begin, end: end);
+                  var offsetAnimation = animation.drive(tween);
 
-                return SlideTransition(
-                  position: offsetAnimation,
-                  child: child,
-                );
-              },
-              transitionDuration: const Duration(milliseconds: 500),
-            );
-          },
+                  return SlideTransition(
+                    position: offsetAnimation,
+                    child: child,
+                  );
+                },
+                transitionDuration: const Duration(milliseconds: 300),
+              );
+            },
+          ),
         ),
         bottomNavigationBar: GetBuilder<MainController>(
           init: controller,
@@ -108,13 +110,13 @@ class MainHostPage extends GetView<MainController> {
               ),
               BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.book,
+                  Icons.hd_outlined,
                 ),
                 label: LocalizationKeys.POPULAR_APP_BAR_TITLE.tr,
               ),
               BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.book_outlined,
+                  Icons.tv_outlined,
                 ),
                 label: LocalizationKeys.TOP_RATED_APP_BAR_TITLE.tr,
               ),

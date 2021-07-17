@@ -29,11 +29,13 @@ class _SlideTransitionContainerState extends State<SlideTransitionContainer>
   bool isVisible = true;
 
   @override
-  void initState() {
+  void initState(){
     animController = AnimationController(
       duration: widget.duration,
       vsync: this,
-    )..forward();
+    );
+
+
     offsetAnimation = Tween<Offset>(
       begin: widget.begin,
       end: widget.end,
@@ -41,6 +43,8 @@ class _SlideTransitionContainerState extends State<SlideTransitionContainer>
       parent: animController,
       curve: widget.curve,
     ));
+    animController.forward();
+
     super.initState();
   }
 
