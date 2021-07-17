@@ -26,6 +26,7 @@ dependencies:
   liquid_swipe: ^2.1.0
   flutter_screenutil: ^5.0.0+2
   flutter_svg: ^0.22.0
+  animated_text_kit: ^4.2.1
   flutter:
     sdk: flutter
 

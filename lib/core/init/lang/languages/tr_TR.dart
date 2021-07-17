@@ -9,17 +9,19 @@ const Map<String, String> tr_TR = {
   LocalizationKeys.HOME_VIEW_ALL: "Hepsini Görüntüle",
 
   //on board page
-  LocalizationKeys.ON_BOARD_PAGE_TITLE_1: "Tanıtım Sayfası Başlığı 1",
+  LocalizationKeys.ON_BOARD_PAGE_NEXT_TEXT:"Geç",
+  LocalizationKeys.ON_BOARD_PAGE_SKIP_TEXT:"Atla",
+  LocalizationKeys.ON_BOARD_PAGE_TITLE_1: "The MovieDB",
   LocalizationKeys.ON_BOARD_PAGE_DESCRIPTION_1:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "Bu uygulama The MovieDB internet sitesinin API si kullanılarak hazırlanmıştır. Uygulamada bulunan diziler ve içerikleri ile ilgili bilgiler The MovieDB internet sitesine aittir.",
 
-  LocalizationKeys.ON_BOARD_PAGE_TITLE_2: "Tanıtım Sayfası Başlığı 2",
+  LocalizationKeys.ON_BOARD_PAGE_TITLE_2: "Popüler ve En çok oylanan Diziler",
   LocalizationKeys.ON_BOARD_PAGE_DESCRIPTION_2:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "Uygulama içerisinden son zamanlarda çokça izlenen popüler dizileri takip edebilirsiniz.Uygulama içerisinden son zamanlarda en çok oyalan  dizileri takip edebilirsiniz.",
 
-  LocalizationKeys.ON_BOARD_PAGE_TITLE_3: "Tanıtım Sayfası Başlığı 3",
+  LocalizationKeys.ON_BOARD_PAGE_TITLE_3: "Tema ve Dil Seçimi",
   LocalizationKeys.ON_BOARD_PAGE_DESCRIPTION_3:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "Uygulama içerisinden genel temayı  aydınlık veya karanlık tema olarak değiştirebilirsiniz.Uygulamanın dilini yine uygulama içerisinden değiştirebilirsiniz.",
 
   LocalizationKeys.ON_BOARD_PAGE_SKIP_BUTTON_TEXT: "Keşfetmeye Başla",
 

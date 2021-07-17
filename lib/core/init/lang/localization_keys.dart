@@ -10,6 +10,8 @@ class LocalizationKeys {
   static const String HOME_VIEW_ALL = "home_view_all";
 
   //on board page
+  static const String ON_BOARD_PAGE_NEXT_TEXT="on_board_page_next_text";
+  static const String ON_BOARD_PAGE_SKIP_TEXT="on_board_page_skip_text";
   static const String ON_BOARD_PAGE_TITLE_1 = "on_board_page_title_1";
   static const String ON_BOARD_PAGE_DESCRIPTION_1 =
       "on_board_page_description_1";

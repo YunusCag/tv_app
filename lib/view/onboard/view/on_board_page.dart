@@ -9,6 +9,7 @@ import 'package:tv_app/core/init/storage/local_storage_service.dart';
 import 'package:tv_app/view/onboard/controller/on_board_page_controller.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 import 'package:tv_app/view/onboard/view/components/introduction_page.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OnBoardPage extends StatefulWidget {
   OnBoardPage({
@@ -86,39 +87,93 @@ class _OnBoardPageState extends State<OnBoardPage> {
             ),
           ),
           Align(
-            alignment: Alignment.bottomRight,
-            child: Padding(
-              padding: const EdgeInsets.all(25.0),
-              child: TextButton(
-                onPressed: () {
-                  controller.liquidController
-                      .animateToPage(page: pages.length - 1, duration: 700);
-                },
-                child: Text("Skip to End"),
-                style: TextButton.styleFrom(
-                  primary: Colors.white.withOpacity(0.01),
-                ),
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              padding: EdgeInsets.symmetric(
+                horizontal: 12.w,
+                vertical: 8.h,
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  OutlinedButton(
+                    onPressed: () {
+                      controller.liquidController
+                          .animateToPage(page: pages.length - 1, duration: 700);
+                    },
+                    child: Text(
+                      LocalizationKeys.ON_BOARD_PAGE_SKIP_TEXT.tr,
+                      style: TextStyle(
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    style: ButtonStyle(
+                      shape: MaterialStateProperty.all(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0.r),
+                          side: BorderSide(
+                            color: Colors.white,
+                            width: 5.w,
+                          ),
+                        ),
+                      ),
+                      overlayColor: MaterialStateProperty.all(
+                        Colors.pink.withOpacity(0.4),
+                      ),
+                      textStyle: MaterialStateProperty.all(
+                        TextStyle(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                  OutlinedButton(
+                    onPressed: () {
+                      controller.liquidController.animateToPage(
+                          page: controller.liquidController.currentPage + 1 >
+                                  pages.length - 1
+                              ? 0
+                              : controller.liquidController.currentPage + 1);
+                    },
+                    child: Text(
+                      LocalizationKeys.ON_BOARD_PAGE_NEXT_TEXT.tr,
+                      style: TextStyle(
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    style: ButtonStyle(
+                      shape: MaterialStateProperty.all(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0.r),
+                          side: BorderSide(
+                            color: Colors.white,
+                            width: 5.w,
+                          ),
+                        ),
+                      ),
+                      overlayColor: MaterialStateProperty.all(
+                        Colors.pink.withOpacity(0.4),
+                      ),
+                      textStyle: MaterialStateProperty.all(
+                        TextStyle(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
               ),
             ),
           ),
-          Align(
-            alignment: Alignment.bottomLeft,
-            child: Padding(
-              padding: const EdgeInsets.all(25.0),
-              child: TextButton(
-                  onPressed: () {
-                    controller.liquidController.jumpToPage(
-                        page: controller.liquidController.currentPage + 1 >
-                                pages.length - 1
-                            ? 0
-                            : controller.liquidController.currentPage + 1);
-                  },
-                  child: Text("Next"),
-                  style: TextButton.styleFrom(
-                    primary: Colors.white.withOpacity(0.01),
-                  )),
-            ),
-          )
         ],
       ),
     );
