@@ -39,6 +39,7 @@ class ThemeService {
 
   ThemeData light = ThemeData(
     brightness: Brightness.light,
+    scaffoldBackgroundColor: Colors.white,
     cardColor: Colors.white,
     textTheme: GoogleFonts.robotoTextTheme().copyWith(
       headline1: TextStyle(

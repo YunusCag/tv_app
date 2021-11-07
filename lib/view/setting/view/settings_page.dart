@@ -7,10 +7,8 @@ import 'package:tv_app/view/common/components/animation/slide_transition_contain
 import 'package:tv_app/view/setting/controller/settings_page_controller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class SettingsPage extends StatelessWidget {
+class SettingsPage extends GetView<SettingsPageController> {
   SettingsPage({Key? key}) : super(key: key);
-
-  final SettingsPageController controller = Get.put(SettingsPageController());
 
   @override
   Widget build(BuildContext context) {

@@ -19,7 +19,7 @@ class LoggerInterceptor extends Interceptor {
 
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) {
-    logger.d("OnResponse:${response.data}");
+    //logger.d("OnResponse:${response.data}");
     super.onResponse(response, handler);
   }
 }

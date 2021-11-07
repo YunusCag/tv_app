@@ -29,8 +29,6 @@ class HomeBinding extends Bindings {
     Get.lazyPut(
       () => PopularSeriesController(Get.find()),
     );
-    Get.lazyPut(
-      () => TopRatedSeriesController(Get.find()),
-    );
+    Get.lazyPut(() => TopRatedSeriesController(Get.find()),);
   }
 }

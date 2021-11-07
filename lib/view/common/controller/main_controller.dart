@@ -9,6 +9,7 @@ import 'package:tv_app/view/common/model/enum/main_navigation_state.dart';
 
 class MainController extends GetxController {
   final GlobalKey<NavigatorState> mainNavigation = GlobalKey<NavigatorState>();
+  final int navId=1;
 
   final pageTitle = RxString(LocalizationKeys.HOME_APP_BAR_TITLE);
 
@@ -55,18 +56,10 @@ class MainController extends GetxController {
     update([NAVIGATION_OBSERVE_ID]);
   }
 
-  void navigate(MainNavigationState state) {
+  void navigate(MainNavigationState state) async{
     if (currentNav.value != state.index) {
       currentNav.value = state.index;
-      if (checkStackContains(state)) {
-        backStack.remove(state);
-        backStack.addLast(state);
-        mainNavigation.currentState
-            ?.pushReplacementNamed(_getNavRouteName(state));
-      } else {
-        backStack.addLast(state);
-        mainNavigation.currentState?.pushNamed(_getNavRouteName(state));
-      }
+      Get.offAndToNamed(_getNavRouteName(state),id: navId);
 
       update([NAVIGATION_OBSERVE_ID]);
     }
