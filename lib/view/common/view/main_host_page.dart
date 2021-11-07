@@ -52,7 +52,10 @@ class MainHostPage extends GetView<MainController> {
                 case AppNavigation.HOME_PAGE:
                   page = HomePage();
                   controller.changePageTitle(LocalizationKeys.HOME_APP_BAR_TITLE);
-                  break;
+
+                  return GetPageRoute(
+                    routeName: AppNavigation.HOME_PAGE,
+                  );
                 case AppNavigation.POPULAR_PAGE:
                   page = PopularSeriesPage();
                   controller
@@ -74,23 +77,8 @@ class MainHostPage extends GetView<MainController> {
                   controller.changePageTitle(LocalizationKeys.HOME_APP_BAR_TITLE);
                   break;
               }
-              return PageRouteBuilder(
-                pageBuilder: (context, anim1, anim2) => page,
-                transitionsBuilder:
-                    (context, animation, secondaryAnimation, child) {
-                  var begin = Offset(1, 0);
-                  var end = Offset.zero;
-                  var tween = Tween(begin: begin, end: end);
-                  var offsetAnimation = animation.drive(tween);
-
-                  return SlideTransition(
-                    position: offsetAnimation,
-                    child: child,
-                  );
-                },
-                transitionDuration: const Duration(milliseconds: 300),
-              );
             },
+
           ),
         ),
         bottomNavigationBar: GetBuilder<MainController>(
