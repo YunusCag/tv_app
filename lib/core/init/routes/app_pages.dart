@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:tv_app/view/common/bindings/main_host_binding.dart';
-import 'package:tv_app/view/common/view/main_host_page.dart';
+import 'package:tv_app/view/main/view/main_host_page.dart';
 import 'package:tv_app/view/detail/bindings/detail_binding.dart';
 import 'package:tv_app/view/detail/views/detail_page.dart';
+import 'package:tv_app/view/main/bindings/main_host_binding.dart';
 import 'package:tv_app/view/onboard/bindings/on_board_binding.dart';
 import 'package:tv_app/view/onboard/view/on_board_page.dart';
 import 'package:tv_app/view/splash/bindings/splash_binding.dart';

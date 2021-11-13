@@ -5,8 +5,8 @@ import 'package:get/get.dart';
 import 'package:tv_app/core/init/lang/lang.dart';
 import 'package:tv_app/core/init/storage/local_storage_service.dart';
 import 'package:tv_app/core/init/theme/theme_service.dart';
-import 'package:tv_app/view/home/bindings/home_binding.dart';
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:tv_app/view/main/view/subPages/home/bindings/home_binding.dart';
 
 import 'core/init/routes/app_pages.dart';
 
@@ -35,7 +35,6 @@ class TVApp extends StatelessWidget {
         enableLog: true,
         translations: LocalizationService.instance,
         debugShowCheckedModeBanner: false,
-        initialBinding: HomeBinding(),
         initialRoute: AppPages.INITIAL,
         locale: LocalizationService.locale,
         fallbackLocale: LocalizationService.fallbackLocale,

@@ -10,10 +10,10 @@ import 'package:tv_app/view/detail/views/header/detail_header.dart';
 import 'package:tv_app/view/detail/views/listview/credit_horizontal_list_view.dart';
 import 'package:tv_app/view/detail/views/listview/video_horizontal_list_view.dart';
 import 'package:tv_app/view/detail/views/shimmer/credit_skeleton.dart';
-import 'package:tv_app/view/home/views/component/shimmer/single_card_shimmer.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tv_app/core/extension/string_extension.dart';
 import 'package:get/get.dart';
+import 'package:tv_app/view/main/view/subPages/home/views/component/shimmer/single_card_shimmer.dart';
 
 // ignore: must_be_immutable
 class SeriesDetailView extends StatelessWidget {

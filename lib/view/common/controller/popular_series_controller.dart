@@ -30,7 +30,10 @@ class PopularSeriesController extends GetxController {
     popularState = NetworkState.LOADING;
     update([popularID]);
     await service
-        .getPopularSeries(language,popularCurrentPage)
+        .getPopularSeries(
+      language: language,
+      page: this.popularCurrentPage,
+    )
         .then((response) {
       var popular = response.data;
       if (popular != null) {
@@ -45,7 +48,7 @@ class PopularSeriesController extends GetxController {
       }
       update([popularID]);
     }).catchError((error) {
-      final err=error as DioError;
+      final err = error as DioError;
       popularState = NetworkState.ERROR;
 
       update([popularID]);
@@ -54,7 +57,10 @@ class PopularSeriesController extends GetxController {
 
   void getPopularPagination({String language = "en-US"}) async {
     await service
-        .getPopularSeries(language,popularCurrentPage)
+        .getPopularSeries(
+      language: language,
+      page: popularCurrentPage,
+    )
         .then((response) {
       var popular = response.data;
       if (popular != null) {
@@ -64,12 +70,10 @@ class PopularSeriesController extends GetxController {
         if (seriesList != null && seriesList.isNotEmpty) {
           this.popularSeries.addAll(seriesList);
           update([popularID]);
-
         }
-      } else {
-      }
+      } else {}
     }).catchError((error) {
-      final err=error as DioError;
+      final err = error as DioError;
     });
   }
 

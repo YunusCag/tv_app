@@ -17,12 +17,13 @@ class _TVSeriesClient implements TVSeriesClient {
 
   @override
   Future<HttpResponse<PopularSeriesResponseModel?>> getPopularSeries(
-      language, page) async {
+      {language, page}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'language': language,
       r'page': page
     };
+    queryParameters.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<HttpResponse<PopularSeriesResponseModel>>(
@@ -58,12 +59,13 @@ class _TVSeriesClient implements TVSeriesClient {
 
   @override
   Future<HttpResponse<TopRatedSeriesResponseModel?>> getTopRatedSeries(
-      language, page) async {
+      {language, page}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'language': language,
       r'page': page
     };
+    queryParameters.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<HttpResponse<TopRatedSeriesResponseModel>>(

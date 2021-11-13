@@ -16,10 +16,10 @@ abstract class TVSeriesClient {
   factory TVSeriesClient(Dio dio, {String baseUrl}) = _TVSeriesClient;
 
   @GET(ApiUrl.GET_POPULAR_SERIES)
-  Future<HttpResponse<PopularSeriesResponseModel?>> getPopularSeries(
-    @Query("language") String language,
-    @Query("page") int page,
-  );
+  Future<HttpResponse<PopularSeriesResponseModel?>> getPopularSeries({
+    @Query("language") String? language,
+    @Query("page") int? page,
+  });
 
   @GET(ApiUrl.GET_SERIES_DETAIL)
   Future<HttpResponse<SeriesDetailResponseModel?>> getSeriesDetail(
@@ -28,10 +28,10 @@ abstract class TVSeriesClient {
   );
 
   @GET(ApiUrl.GET_TOP_RATED_SERIES)
-  Future<HttpResponse<TopRatedSeriesResponseModel?>> getTopRatedSeries(
-    @Query("language") String language,
-    @Query("page") int page,
-  );
+  Future<HttpResponse<TopRatedSeriesResponseModel?>> getTopRatedSeries({
+    @Query("language") String? language,
+    @Query("page") int? page,
+  });
 
   @GET(ApiUrl.GET_SERIES_CREDITS)
   Future<HttpResponse<CreditResponse?>> getSeriesCredits({

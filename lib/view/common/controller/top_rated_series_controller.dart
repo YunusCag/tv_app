@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:tv_app/core/constants/enum/enum.dart';
@@ -31,7 +30,10 @@ class TopRatedSeriesController extends GetxController {
     update([topRatedID]);
 
     await service
-        .getTopRatedSeries(language,topRatedCurrentPage)
+        .getTopRatedSeries(
+      language: language,
+      page: topRatedCurrentPage,
+    )
         .then((response) {
       var topRated = response.data;
       if (topRated != null) {
@@ -54,7 +56,7 @@ class TopRatedSeriesController extends GetxController {
 
   void getTopRatedPagination({String language = "en-US"}) async {
     await service
-        .getTopRatedSeries(language,topRatedCurrentPage)
+        .getTopRatedSeries(language: language, page: topRatedCurrentPage)
         .then((response) {
       var topRated = response.data;
       if (topRated != null) {
@@ -64,12 +66,10 @@ class TopRatedSeriesController extends GetxController {
         if (seriesList != null && seriesList.isNotEmpty) {
           this.topRatedSeries.addAll(seriesList);
           update([topRatedID]);
-
         }
-      } else {
-      }
+      } else {}
     }).catchError((error) {
-      final err=error as DioError;
+
     });
   }
 
