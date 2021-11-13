@@ -6,6 +6,7 @@ import 'package:tv_app/view/main/view/subPages/popular/controller/popular_page_c
 class PopularBinding implements Bindings {
   @override
   void dependencies() {
+
     Get.lazyPut(() => PopularSeriesController(Get.find<TVSeriesClient>()));
     Get.lazyPut(() => PopularPageController());
   }

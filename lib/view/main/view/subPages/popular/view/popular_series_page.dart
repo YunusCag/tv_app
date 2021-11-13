@@ -8,13 +8,6 @@ class PopularSeriesPage extends GetView<PopularPageController> {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      controller: controller.scrollController,
-      slivers: [
-        SliverToBoxAdapter(
-          child: PopularSeriesView(),
-        )
-      ],
-    );
+    return PopularSeriesView();
   }
 }
