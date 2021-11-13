@@ -69,7 +69,11 @@ class HomeController extends GetxController {
           if (!isPagination) {
             this.populars.clear();
           }
-          this.populars.addAll(response);
+          final data=response.data;
+          if(data!=null){
+            this.populars.addAll(data);
+          }
+
           this.popularState = NetworkState.SUCCESS;
           update([POPULAR_OBSERVE_ID]);
         }
@@ -97,7 +101,10 @@ class HomeController extends GetxController {
       (response) {
         if (response != null) {
           this.topRateds.clear();
-          this.topRateds.addAll(response);
+          final data=response.data;
+          if(data!=null){
+            this.topRateds.addAll(data);
+          }
           this.topState = NetworkState.SUCCESS;
           update([TOP_RATED_OBSERVE_ID]);
         }

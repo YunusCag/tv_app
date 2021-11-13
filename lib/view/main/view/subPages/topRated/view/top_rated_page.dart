@@ -9,13 +9,6 @@ class TopRatedPage extends GetView<TopRatedPageController> {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      controller: controller.scrollController,
-      slivers: [
-        SliverToBoxAdapter(
-          child: TopRatedSeriesView(),
-        )
-      ],
-    );
+    return TopRatedSeriesView();
   }
 }
