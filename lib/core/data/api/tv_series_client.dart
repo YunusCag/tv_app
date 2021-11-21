@@ -22,10 +22,10 @@ abstract class TVSeriesClient {
   });
 
   @GET(ApiUrl.GET_SERIES_DETAIL)
-  Future<HttpResponse<SeriesDetailResponseModel?>> getSeriesDetail(
-    @Path("id") int id,
-    @Query("language") String language,
-  );
+  Future<HttpResponse<SeriesDetailResponseModel?>> getSeriesDetail({
+    @Path("id") int? id,
+    @Query("language") String? language,
+  });
 
   @GET(ApiUrl.GET_TOP_RATED_SERIES)
   Future<HttpResponse<TopRatedSeriesResponseModel?>> getTopRatedSeries({

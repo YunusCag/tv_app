@@ -40,9 +40,10 @@ class _TVSeriesClient implements TVSeriesClient {
 
   @override
   Future<HttpResponse<SeriesDetailResponseModel?>> getSeriesDetail(
-      id, language) async {
+      {id, language}) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'language': language};
+    queryParameters.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<HttpResponse<SeriesDetailResponseModel>>(

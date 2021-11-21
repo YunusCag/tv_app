@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:tv_app/core/base/view/base_network_view.dart';
 import 'package:tv_app/view/detail/controllers/detail_controller.dart';
@@ -15,7 +15,15 @@ class DetailPage extends GetView<DetailController> {
         builder: (_) => BaseNetworkView(
           status: controller.detailState,
           onLoading: SkeletonDetail(),
-          onError: SizedBox.shrink(),
+          onError: Center(
+            child: Text(
+              this.controller.detailErrorMessage??"",
+              style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+          ),
           onSuccess: SeriesDetailView(
             model: controller.seriesDetail.value,
           ),

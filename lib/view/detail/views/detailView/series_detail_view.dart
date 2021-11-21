@@ -82,7 +82,15 @@ class SeriesDetailView extends StatelessWidget {
                 id: DetailController.CREDIT_OBSERVE_ID,
                 builder: (_) => BaseNetworkView(
                   status: controller.creditState,
-                  onError: const SizedBox.shrink(),
+                  onError: Center(
+                    child: Text(
+                      this.controller.creditErrorMessage??"",
+                      style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ),
                   onLoading: CreditSkeleton(),
                   onSuccess: Column(
                     children: [
