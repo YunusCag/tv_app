@@ -30,6 +30,7 @@ class MainController extends GetxController {
 
   bool onBackPressed() {
     final check=backStack.isNotEmpty;
+    /*
     if (check) {
       backStack.removeLast();
       final last = backStack.last;
@@ -41,7 +42,8 @@ class MainController extends GetxController {
 
       Get.back(id: navId);
     }
-    return !check;
+     */
+    return true;
   }
 
   void onBottomNavBarTap(int index) {
@@ -54,7 +56,9 @@ class MainController extends GetxController {
     if (currentNav.value != state.index) {
       currentNav.value = state.index;
       backStack.add(state);
-      Get.toNamed(_getNavRouteName(state),id: navId);
+      Get.offNamedUntil(_getNavRouteName(state),(route){
+        return false;
+      },id: navId,);
 
       update([NAVIGATION_OBSERVE_ID]);
     }

@@ -11,7 +11,7 @@ class PopularPageController extends GetxController {
     required this.useCase,
   });
 
-  final ScrollController scrollController = ScrollController();
+  late ScrollController scrollController;
 
   final populars = RxList<SeriesModel?>();
   NetworkState popularState = NetworkState.IDLE;
@@ -21,6 +21,7 @@ class PopularPageController extends GetxController {
 
   @override
   void onInit() {
+    scrollController = ScrollController();
     initScrollListener();
 
     getPopular(
@@ -37,6 +38,11 @@ class PopularPageController extends GetxController {
     });
   }
 
+  @override
+  void dispose() {
+    scrollController.dispose();
+    super.dispose();
+  }
   void getPagination() {
     if (this.popularState == NetworkState.LOADING) {
       return;

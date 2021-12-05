@@ -13,13 +13,13 @@ class LoggerInterceptor extends Interceptor {
 
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    logger.d("OnRequest:\n Url:${options.uri.toString()}\n Data:${options.data}\n Query:${options.queryParameters}\n Header:${options.headers}");
+    //logger.d("OnRequest:\n Url:${options.uri.toString()}\n Data:${options.data}\n Query:${options.queryParameters}\n Header:${options.headers}");
     super.onRequest(options, handler);
   }
 
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) {
-    logger.d("OnResponse:${response.data}");
+    //logger.d("OnResponse:${response.data}");
     super.onResponse(response, handler);
   }
 }

@@ -11,7 +11,7 @@ class TopRatedPageController extends GetxController {
     required this.useCase,
   });
 
-  final ScrollController scrollController = ScrollController();
+  late  ScrollController scrollController;
 
   final topRateds = RxList<SeriesModel?>();
   NetworkState topState = NetworkState.IDLE;
@@ -21,12 +21,19 @@ class TopRatedPageController extends GetxController {
 
   @override
   void onInit() {
+    scrollController = ScrollController();
     initScrollListener();
 
     getTopRateds(
       page: this.currentPage,
     );
     super.onInit();
+  }
+
+  @override
+  void dispose() {
+    scrollController.dispose();
+    super.dispose();
   }
   void initScrollListener() {
     scrollController.addListener(() {
