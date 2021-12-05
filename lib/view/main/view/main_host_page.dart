@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tv_app/core/constants/navigation/app_navigation.dart';
 import 'package:tv_app/core/init/lang/lang.dart';
+import 'package:tv_app/view/common/components/transition/parallax_transition.dart';
 import 'package:tv_app/view/main/controller/main_controller.dart';
 import 'package:tv_app/view/common/model/enum/main_navigation_state.dart';
 import 'package:tv_app/view/main/view/subPages/home/bindings/home_binding.dart';
@@ -60,7 +61,10 @@ class MainHostPage extends GetView<MainController> {
                     routeName: AppNavigation.HOME_PAGE,
                     page: () => HomePage(),
                     binding: HomeBinding(),
-                    transition: Transition.rightToLeft,
+                    //transition: Transition.leftToRight,
+                    customTransition: ParallaxTransition(),
+                    transitionDuration: Duration(milliseconds: 600),
+                    curve: Curves.easeInOut,
                   );
                 case AppNavigation.POPULAR_PAGE:
                   controller
@@ -69,16 +73,21 @@ class MainHostPage extends GetView<MainController> {
                     routeName: AppNavigation.POPULAR_PAGE,
                     page: () => PopularSeriesPage(),
                     binding: PopularBinding(),
-                    transition: Transition.rightToLeft,
+                    customTransition: ParallaxTransition(),
+                    transitionDuration: Duration(milliseconds: 600),
+                    curve: Curves.easeInOut,
                   );
                 case AppNavigation.TOP_RATED_PAGE:
                   controller.changePageTitle(
                       LocalizationKeys.TOP_RATED_APP_BAR_TITLE);
                   return GetPageRoute(
-                      routeName: AppNavigation.TOP_RATED_PAGE,
-                      page: () => TopRatedPage(),
-                      binding: TopBinding(),
-                    transition: Transition.rightToLeft,
+                    routeName: AppNavigation.TOP_RATED_PAGE,
+                    page: () => TopRatedPage(),
+                    binding: TopBinding(),
+                    //transition: Transition.rightToLeft,
+                    customTransition: ParallaxTransition(),
+                    transitionDuration: Duration(milliseconds: 600),
+                    curve: Curves.easeInOut,
                   );
                 case AppNavigation.SETTINGS_PAGE:
                   controller.changePageTitle(
@@ -88,7 +97,10 @@ class MainHostPage extends GetView<MainController> {
                     routeName: AppNavigation.SETTINGS_PAGE,
                     page: () => SettingsPage(),
                     binding: SettingBinding(),
-                    transition: Transition.upToDown,
+                    //transition: Transition.upToDown,
+                    customTransition: ParallaxTransition(),
+                    transitionDuration: Duration(milliseconds: 600),
+                    curve: Curves.easeInOut,
                   );
                 default:
                   controller
@@ -97,7 +109,10 @@ class MainHostPage extends GetView<MainController> {
                     routeName: AppNavigation.HOME_PAGE,
                     page: () => HomePage(),
                     binding: HomeBinding(),
-                    transition: Transition.leftToRight,
+                    //transition: Transition.leftToRight,
+                    customTransition: ParallaxTransition(),
+                    curve: Curves.easeInOut,
+                    transitionDuration: Duration(milliseconds: 600),
                   );
               }
             },

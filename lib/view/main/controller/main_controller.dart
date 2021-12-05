@@ -1,6 +1,5 @@
 import 'dart:collection';
 
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:logger/logger.dart';
 import 'package:tv_app/core/constants/navigation/app_navigation.dart';
@@ -8,7 +7,6 @@ import 'package:tv_app/core/init/lang/lang.dart';
 import 'package:tv_app/view/common/model/enum/main_navigation_state.dart';
 
 class MainController extends GetxController {
-  final GlobalKey<NavigatorState> mainNavigation = GlobalKey<NavigatorState>();
   final int navId=1;
 
   final pageTitle = RxString(LocalizationKeys.HOME_APP_BAR_TITLE);
@@ -31,21 +29,17 @@ class MainController extends GetxController {
   }
 
   bool onBackPressed() {
-    bool check = mainNavigation.currentState?.canPop() == true;
+    final check=backStack.isNotEmpty;
     if (check) {
-      if (backStack.isNotEmpty) {
-        backStack.removeLast();
-        if (backStack.isNotEmpty) {
-          final last = backStack.last;
-          logger.d(backStack.toString() + "\n Last:${last.toString()}");
+      backStack.removeLast();
+      final last = backStack.last;
+      logger.d(backStack.toString() + "\n Last:${last.toString()}");
 
-          currentNav.value = last.index;
-          _getNavRouteName(last);
-          update([NAVIGATION_OBSERVE_ID]);
-        }
-      }
+      currentNav.value = last.index;
+      _getNavRouteName(last);
+      update([NAVIGATION_OBSERVE_ID]);
 
-      mainNavigation.currentState?.pop();
+      Get.back(id: navId);
     }
     return !check;
   }
@@ -59,7 +53,8 @@ class MainController extends GetxController {
   void navigate(MainNavigationState state) async{
     if (currentNav.value != state.index) {
       currentNav.value = state.index;
-      Get.offAndToNamed(_getNavRouteName(state),id: navId);
+      backStack.add(state);
+      Get.toNamed(_getNavRouteName(state),id: navId);
 
       update([NAVIGATION_OBSERVE_ID]);
     }

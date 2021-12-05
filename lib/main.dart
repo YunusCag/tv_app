@@ -6,6 +6,7 @@ import 'package:tv_app/core/init/lang/lang.dart';
 import 'package:tv_app/core/init/storage/local_storage_service.dart';
 import 'package:tv_app/core/init/theme/theme_service.dart';
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:tv_app/view/common/components/transition/parallax_transition.dart';
 import 'package:tv_app/view/main/view/subPages/home/bindings/home_binding.dart';
 
 import 'core/init/routes/app_pages.dart';
@@ -34,6 +35,7 @@ class TVApp extends StatelessWidget {
         title: "TV App",
         enableLog: true,
         translations: LocalizationService.instance,
+        customTransition: ParallaxTransition(),
         debugShowCheckedModeBanner: false,
         initialRoute: AppPages.INITIAL,
         locale: LocalizationService.locale,

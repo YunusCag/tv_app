@@ -12,7 +12,6 @@ import 'package:tv_app/view/detail/views/listview/video_horizontal_list_view.dar
 import 'package:tv_app/view/detail/views/shimmer/credit_skeleton.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tv_app/core/extension/string_extension.dart';
-import 'package:get/get.dart';
 import 'package:tv_app/view/main/view/subPages/home/views/component/shimmer/single_card_shimmer.dart';
 
 // ignore: must_be_immutable
